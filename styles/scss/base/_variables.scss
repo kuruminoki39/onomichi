@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;600&display=swap";
+
+// breakpoints
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1420px,
+);
+
+// design size
+$design-size: (
+  "pc-width": 1440,
+  "pc-height": 810,
+  "sp-width": 360,
+  "sp-height": 800,
+);
+
+// colors
+$color-base-white: #ffffff;
+$color-base-black: #000000;
+$color-base-blue: #498edf;
+$color-base-gray: #eaeaea;
+$color-base-red: #e74c3c;
+
+// fonts
+$noto-sans: "M PLUS 2", "Noto Sans JP", sans-serif;
