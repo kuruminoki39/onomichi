@@ -2,20 +2,13 @@
 @use "../base/functions" as *;
 @use "../base/mixins" as *;
 
-h1 {
-  font-size: 20px;
-  margin-bottom: 1rem;
-
+.header__logo {
   @include sp() {
-    font-size: vw_sp(20);
+    width: vw_sp(210);
   }
-}
 
-h2 {
-  font-size: 18px;
-  margin-bottom: 1rem;
-
-  @include sp() {
-    font-size: vw_sp(18);
+  img {
+    width: 100%;
+    height: auto;
   }
 }
