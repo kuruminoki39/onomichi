@@ -32,7 +32,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./styles/app.css" />
+    <link rel="stylesheet" href="./styles/css/app.css" />
   </head>
   <body>
     <header class="header">
@@ -41,6 +41,7 @@
           <a href="./index.html"><img src="./images/header/header-logo.png" alt="snap onomichi" /></a>
         </h1>
 
+        <!-- PCメニュー -->
         <nav class="header__nav">
           <a href="" class="header__link">キャンペーンについて</a>
           <a href="" class="header__link">キャンペーン特典</a>
@@ -50,9 +51,33 @@
           <a href="" class="header__link">お問い合わせ</a>
           <a href="" class="header__button button">お問い合わせ</a>
         </nav>
+        <!-- ハンバーガーメニュー -->
+        <button id="js-drawer-icon" class="header__open drawer-icon">
+          <img src="./images/header/hamburger-menu-icon.png" class="drawer-icon__image" alt="Menu Icon" />
+        </button>
       </div>
     </header>
 
+    <!-- ハンバーガーメニューを開いた時のコンテンツ -->
+    <div id="js-drawer-content" class="drawer-content">
+      <nav class="drawer-content__menu">
+        <a href="" class="drawer-content__link">キャンペーンについて</a>
+        <a href="" class="drawer-content__link">キャンペーン特典</a>
+        <a href="" class="drawer-content__link">おすすめスポット</a>
+        <a href="" class="drawer-content__link">よくある質問</a>
+        <a href="" class="drawer-content__link">参加要項</a>
+        <a href="" class="drawer-content__link">お問い合わせ</a>
+        <div class="drawer-content__button">
+          <a href="" class="button">応募してみる</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="mv">
+      <div class="mv__inner">
+        <div class="mv__content"></div>
+      </div>
+    </div>
     <script src="./script/app.js"></script>
   </body>
 </html>

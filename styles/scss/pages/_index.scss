@@ -2,13 +2,129 @@
 @use "../base/functions" as *;
 @use "../base/mixins" as *;
 
+body {
+  font-size: $font-size-base;
+  color: $color-base-brown;
+}
+
+.inner {
+  @include sp() {
+    padding-left: vw_sp(32);
+    padding-right: vw_sp(32);
+    margin: auto;
+  }
+}
+
+.header__inner {
+  display: flex;
+  // 上下中央
+  align-items: center;
+  justify-content: space-between;
+  padding: vw_sp(16) vw_sp(20);
+}
+
 .header__logo {
   @include sp() {
     width: vw_sp(210);
+    height: vw_sp(27);
   }
 
   img {
     width: 100%;
     height: auto;
+  }
+}
+
+.header__nav {
+  @include sp() {
+    display: none;
+  }
+}
+
+.header__open {
+  display: none;
+
+  @include sp() {
+    display: block;
+  }
+}
+
+// ハンバーガーアイコン
+.drawer-icon {
+  display: none;
+
+  @include sp() {
+    // コンテンツを左右中央に配置
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vw_sp(32);
+    height: vw_sp(28);
+    position: relative;
+    z-index: 51;
+    cursor: pointer;
+  }
+}
+
+.drawer-icon__image {
+  //img要素をブロック要素にする
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+// ハンバーガーメニュー開いた時のコンテンツ
+.drawer-content {
+  @include sp() {
+    width: 100%;
+    max-width: vw_sp(375);
+    height: 100%;
+    position: fixed;
+    top: vw_sp(64);
+    right: -100%; // 初期状態で画面外に隠す
+    background: #fff;
+    z-index: 50;
+    padding: vw_sp(82) vw_sp(114);
+    transition: right 0.3s linear; // rightプロパティにトランジションを適用
+
+    &.is-open {
+      right: 0; // 表示時に画面にスライドイン
+    }
+  }
+}
+
+.drawer-content__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 左揃えにする場合 */
+  width: vw_sp(139);
+  gap: vw_sp(40);
+}
+
+.drawer-content__link {
+  @include sp() {
+    color: #4a3636;
+    line-height: 160%; /* 22.4px */
+  }
+}
+
+.drawer-content__button {
+  @include sp() {
+    font-size: vw_sp(16);
+    font-weight: 700;
+    line-height: 160%; /* 25.6px */
+  }
+}
+
+.button {
+  @include sp() {
+    padding: vw_sp(8) vw_sp(24);
+    border-radius: vw_sp(40);
+    border: 2px solid #4a3636;
+    background: #fff;
+    box-shadow: vw_sp(0) vw_sp(4) vw_sp(0) vw_sp(0) #4a3636;
+    // 折り返さない
+    white-space: nowrap;
   }
 }
